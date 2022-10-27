@@ -1,0 +1,44 @@
+html {
+  font-size: 22px;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.title {
+  align-content: center;
+  color: brown;
+  font-size: 50px;
+}
+
+a {
+  color: white;
+}
+
+a:visited {
+  color: lightgray;
+}
+
+a:hover,
+a:active {
+  color: #eee;
+}
+
+/* tutorial */
+
+.mark-resource-group {
+    background-color: rgb(119, 0, 255);
+    color: white;
+}
+
+.mark-location {
+    background-color: rgb(0, 72, 255);
+    color: white;
+}
+
+.mark-acr {
+    background-color: rgb(0, 145, 255);
+    color: white;
+}
