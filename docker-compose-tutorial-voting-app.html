@@ -46,8 +46,8 @@
                         <aside>
                             <details>
                                 <summary>details</summary>
-                                <p><mark>choose your resource group name</mark></p>
-                                <p><mark>choose your location</mark></p>
+                                <p><mark class="mark-resource-group">choose your resource group name</mark></p>
+                                <p><mark class="mark-location">choose your location</mark></p>
                             </details>
                         </aside>
                         <p>
@@ -64,8 +64,8 @@
                         <aside>
                             <details>
                                 <summary>details</summary>
-                                <p><mark>choose your resource group name</mark></p>
-                                <p><mark>choose your acr name</mark></p>
+                                <p><mark class="mark-resource-group">choose your resource group name</mark></p>
+                                <p><mark class="mark-acr">choose your acr name</mark></p>
                             </details>
                         </aside>
                         <p>
@@ -74,6 +74,8 @@
                                 az acr create --resource-group <mark class="mark-resource-group">CommonResourceGroup</mark> --name <mark class="mark-acr">atarimonkacr</mark> --sku Basic
                             </code>
                         </p>
+                    </li>
+                    <li>
                     </li>
                     <li>
                         <p>
@@ -87,9 +89,11 @@
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code2')">Copy</button>
-                            <code id="code2">
-                                az acr create --resource-group <mark class="mark-resource-group">CommonResourceGroup</mark> --name <mark class="mark-acr">atarimonkacr</mark> --sku Basic
+                            <button onclick="Copy('codex')">Copy</button>
+                            <code id="codex">
+                                <mark class="mark-resource-group">CommonResourceGroup</mark>
+                                <mark class="mark-location">swedencentral</mark>
+                                <mark class="mark-acr">atarimonkacr</mark>
                             </code>
                         </p>
                     </li>
