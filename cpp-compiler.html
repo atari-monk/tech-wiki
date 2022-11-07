@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="atari-monk" />
+    <meta name="description" content="Tutorial page of my tech wiki." />
+    <title>Tech Wiki Web Page</title>
+    <link rel="icon" href="./images/html5.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/main.css" type="text/css" />
+    <script src="./js/tutorial.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="title">Install C++ compiler</h1>
+
+        <nav aria-label="primary-navigation">
+            <ul>
+                <li>
+                    <a href="#source">Source</a>
+                </li>
+                <li>
+                    <a href="#desc">Description</a>
+                </li>
+                <li>
+                    <a href="#tutorial">Tutorial</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <hr />
+    <main>
+        <article id="source">
+            <h2>Source</h2>
+            <section>
+                <ul>
+                    <li>
+                        <a href="https://www.freecodecamp.org/news/how-to-install-c-and-cpp-compiler-on-windows/">Source
+                            tutorial</a>
+                    </li>
+                    <li>
+                        <a href="https://www.msys2.org/">MSYS2</a>
+                    </li>
+                </ul>
+            </section>
+        </article>
+        <article id="desc">
+            <h2>Description</h2>
+            <section>
+                <p>
+                    How to install c++ compiler on windows.
+                </p>
+            </section>
+        </article>
+        <article id="tutorial">
+            <h2>Tutorial</h2>
+            <section>
+                <ol>
+                    <li>
+                        <p>
+                            Download MSYS2 cli app, link in Sources.
+                        </p>
+                        <p>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Choose intallation folder.
+                        </p>
+                        <aside>
+                            <details>
+                                <summary>details</summary>
+                                <p><mark class="mark-path">Choose your own installation folder path</mark></p>
+                            </details>
+                        </aside>
+                        <p>
+                            <button onclick="Copy('code1')">Copy</button>
+                            <code id='code1'>
+                                <mark class="mark-path">C:\atari-monk\Apps\msys64</mark>
+                            </code>
+                            <br>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            skipped many steps here, for now...
+                        </p>
+                        <p>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Open 'View Advanced System Settings' dialog in windows
+                        </p>
+                        <aside>
+                            <details>
+                                <summary>details</summary>
+                                <p><mark class="mark-search">Text to search config dialog in windows</mark></p>
+                                <p><mark class="mark-path">Choose your own path to compiler</mark></p>
+                                <p><mark class="mark-path">Choose your own path to make</mark></p>
+                            </details>
+                        </aside>
+                        <p>
+                            <button onclick="Copy('code1')">Copy</button>
+                            <code id='code1'>
+                                <mark class="mark-search">Advanced System Settings</mark>
+                            </code>
+                            <br> <button onclick="Copy('code2')">Copy</button>
+                            <code id='code2'>
+                                Environment Variables button
+                            </code>
+                            <br> <button onclick="Copy('code2')">Copy</button>
+                            <code id='code2'>
+                                Select Path, edit
+                            </code>
+                            <br> <button onclick="Copy('code2')">Copy</button>
+                            <code id='code2'>
+                                Add or edit path to compiler
+                            </code>
+                            <br> <button onclick="Copy('code2')">Copy</button>
+                            <code id='code2'>
+                                Add or edit path to make
+                            </code>
+                            <br> <button onclick="Copy('code2')">Copy</button>
+                            <code id='code2'>
+                                Restart all instances of powershell for envirenmental vars to go in effect
+                            </code>
+                            <br>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Make sure VSCode make extensions have correct path to make in setting.json (acces it thrue
+                            extensions)
+                        </p>
+                        <p>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Note on freeglut. To add it to compiler libs use bellow comand in msys2
+                        </p>
+                        <aside>
+                            <details>
+                                <summary>details</summary>
+                                <p><mark class="">msys2 freeglut install command</mark></p>
+                            </details>
+                        </aside>
+                        <p>
+                            <button onclick="Copy('code1')">Copy</button>
+                            <code id='code1'>
+                                <mark class="">pacman -S mingw-w64-x86_64-freeglut</mark>
+                            </code>
+                            <br>
+                        </p>
+                    </li>
+                </ol>
+            </section>
+        </article>
+    </main>
+    <hr />
+    <footer>
+        <p>
+            &lt;&lt;&lt; &copy; atari-monk - https://github.com/atarimonk
+            &gt;&gt;&gt;
+        </p>
+        <p>
+            <a href="#">Back to Top</a>
+        </p>
+    </footer>
+</body>
+
+</html>
