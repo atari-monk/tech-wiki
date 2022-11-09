@@ -1,6 +1,7 @@
 :root {
   --background: rgb(0, 0, 0);
   --main-text: lightgray;
+  --marked-text: black;
 }
 html {
   font-size: 16px;
@@ -24,23 +25,53 @@ a:hover,
 a:active {
   color: white;
 }
-.mark-resource-group {
+.mark-rg {
   background-color: rgb(119, 0, 255);
-  color: var(--main-text);
+  color: var(--marked-text);
+  font-weight: bolder;
 }
 .mark-location {
   background-color: rgb(0, 72, 255);
-  color: var(--main-text);
+  color: var(--marked-text);
+  font-weight: bolder;
+}
+.mark-tag {
+  background-color: rgb(61, 202, 48);
+  color: var(--marked-text);
+  font-weight: bolder;
+}
+.mark-name {
+  background-color: rgb(197, 142, 22);
+  color: var(--marked-text);
+  font-weight: bolder;
+}
+.mark-login {
+  background-color: rgb(231, 15, 69);
+  color: var(--marked-text);
+  font-weight: bolder;
+}
+.mark-password {
+  background-color: rgb(230, 9, 9);
+  color: var(--marked-text);
+  font-weight: bolder;
+}
+.mark-ip {
+  background-color: rgb(230, 226, 9);
+  color: var(--marked-text);
+  font-weight: bolder;
 }
 .mark-acr {
   background-color: rgb(0, 145, 255);
-  color: var(--main-text);
+  color: var(--marked-text);
+  font-weight: bolder;
 }
 .mark-repo {
   background-color: rgb(169, 172, 37);
-  color: var(--main-text);
+  color: var(--marked-text);
+  font-weight: bolder;
 }
 .mark-acr-context {
   background-color: rgb(23, 156, 68);
-  color: var(--main-text);
+  color: var(--marked-text);
+  font-weight: bolder;
 }
