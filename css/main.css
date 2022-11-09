@@ -17,6 +17,8 @@ body {
 }
 a {
   color: var(--main-text);
+  display:inline-block;
+  margin-bottom: 15px;
 }
 a:visited {
   color: gray;
