@@ -29,52 +29,50 @@ a:active {
   color: white;
 }
 .mark-rg {
-  background-color: rgb(119, 0, 255);
+  background-color: rgb(170, 115, 233);
   color: var(--marked-text);
-  font-weight: bolder;
 }
 .mark-location {
-  background-color: rgb(0, 72, 255);
+  background-color: rgb(95, 137, 243);
   color: var(--marked-text);
-  font-weight: bolder;
 }
 .mark-tag {
   background-color: rgb(61, 202, 48);
   color: var(--marked-text);
-  font-weight: bolder;
 }
 .mark-name {
-  background-color: rgb(197, 142, 22);
+  background-color: rgb(211, 148, 13);
   color: var(--marked-text);
-  font-weight: bolder;
 }
 .mark-login {
-  background-color: rgb(231, 15, 69);
+  background-color: rgb(221, 103, 133);
   color: var(--marked-text);
-  font-weight: bolder;
 }
 .mark-password {
-  background-color: rgb(230, 9, 9);
+  background-color: rgb(218, 97, 97);
   color: var(--marked-text);
-  font-weight: bolder;
 }
 .mark-ip {
   background-color: rgb(230, 226, 9);
   color: var(--marked-text);
-  font-weight: bolder;
 }
 .mark-acr {
-  background-color: rgb(0, 145, 255);
+  background-color: rgb(109, 138, 150);
   color: var(--marked-text);
-  font-weight: bolder;
 }
 .mark-repo {
   background-color: rgb(169, 172, 37);
   color: var(--marked-text);
-  font-weight: bolder;
 }
 .mark-acr-context {
-  background-color: rgb(23, 156, 68);
+  background-color: rgb(86, 138, 197);
   color: var(--marked-text);
-  font-weight: bolder;
+}
+.mark-desc {
+  background-color: rgb(194, 200, 201);
+  color: var(--marked-text);
+}
+.mark-option {
+  background-color: rgb(28, 169, 194);
+  color: var(--marked-text);
 }
