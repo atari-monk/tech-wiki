@@ -98,6 +98,13 @@
                     </li>
                     <li>
                         <p>
+                            Create new repo on github. Named to-do-web-app. Copy project there and commit.
+                        </p>
+                        <p>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
                             Login to Azure CLI
                         </p>
                         <p>
@@ -110,19 +117,40 @@
                     </li>
                     <li>
                         <p>
-                            Create resource group for the project.
+                            Create resource group for to-do-app project.
                         </p>
                         <aside>
                             <details>
                                 <summary>details</summary>
-                                <p><mark class="mark-rg">proj resource group name</mark></p>
+                                <p><mark class="mark-rg">resource group</mark></p>
                                 <p><mark class="mark-location">location</mark></p>
+                                <p><mark class="mark-tag">description tag</mark></p>
                             </details>
                         </aside>
                         <p>
                             <button onclick="Copy('code4')">Copy</button>
                             <code id='code4'>
-                                az group create --name <mark class="mark-rg">az-web-app-db-tutorial-rg</mark> --location <mark class="mark-location">swedencentral</mark>
+                                az group create --name <mark class="mark-rg">to-do-web-app-rg</mark> --location <mark class="mark-location">swedencentral</mark> --tags <mark class="mark-tag">to-do-web-app</mark>
+                            </code>
+                            <br>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Create resource group App Service plans.
+                        </p>
+                        <aside>
+                            <details>
+                                <summary>details</summary>
+                                <p><mark class="mark-rg">resource group</mark></p>
+                                <p><mark class="mark-location">location</mark></p>
+                                <p><mark class="mark-tag">description tag</mark></p>
+                            </details>
+                        </aside>
+                        <p>
+                            <button onclick="Copy('code5')">Copy</button>
+                            <code id='code5'>
+                                az group create --name <mark class="mark-rg">atari-monk-appservice-plans-rg</mark> --location <mark class="mark-location">swedencentral</mark> --tags <mark class="mark-tag">appservice-plans rg</mark>
                             </code>
                             <br>
                         </p>
@@ -135,14 +163,14 @@
                             <details>
                                 <summary>details</summary>
                                 <p><mark class="mark-name">App Service plan name</mark></p>
-                                <p><mark class="mark-rg">proj resource group name</mark></p>
+                                <p><mark class="mark-rg">resource group</mark></p>
                                 <p><mark class="mark-option">Free az plan tier</mark></p>
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code5')">Copy</button>
-                            <code id='code5'>
-                                az appservice plan create --name <mark class="mark-name">az-web-app-db-tutorial-plan</mark> --resource-group <mark class="mark-rg">az-web-app-db-tutorial-rg</mark> --is-linux --sku <mark class="mark-option">F1</mark>
+                            <button onclick="Copy('code6')">Copy</button>
+                            <code id='code6'>
+                                az appservice plan create --name <mark class="mark-name">atari-monk-appservice-plan1</mark> --resource-group <mark class="mark-rg">atari-monk-appservice-plans-rg</mark> --is-linux --sku <mark class="mark-option">F1</mark>
                             </code>
                             <br>
                         </p>
@@ -159,13 +187,13 @@
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code6')">Copy</button>
-                            <code id='code6'>
+                            <button onclick="Copy('code7')">Copy</button>
+                            <code id='code7'>
                                 az webapp list-runtimes --os linux --output table
                             </code>
                             <br>
-                            <button onclick="Copy('code7')">Copy</button>
-                            <code id='code7'>
+                            <button onclick="Copy('code8')">Copy</button>
+                            <code id='code8'>
                                 az webapp list-runtimes --os windows --output table
                             </code>
                             <br>
@@ -182,13 +210,13 @@
                                             .azurewebsites.com</mark></p>
                                 <p><mark class="mark-name">runtime</mark></p>
                                 <p><mark class="mark-name"></mark></p>
-                                <p><mark class="mark-rg"></mark></p>
+                                <p><mark class="mark-rg">resource group</mark></p>
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code8')">Copy</button>
-                            <code id='code8'>
-                                az webapp create --name <mark class="mark-name">az-web-app-db-tutorial</mark> --runtime "<mark class="mark-name">DOTNETCORE:6.0</mark>" --plan <mark class="mark-name">az-web-app-db-tutorial-plan</mark> --resource-group <mark class="mark-rg">az-web-app-db-tutorial-rg</mark>
+                            <button onclick="Copy('code9')">Copy</button>
+                            <code id='code9'>
+                                az webapp create --name <mark class="mark-name">to-do-web-app</mark> --runtime "<mark class="mark-name">DOTNETCORE:6.0</mark>" --plan <mark class="mark-name">atari-monk-appservice-plan1</mark> --resource-group <mark class="mark-rg">to-do-web-app-rg</mark>
                             </code>
                             <br>
                         </p>
@@ -208,15 +236,15 @@
                         <aside>
                             <details>
                                 <summary>details</summary>
-                                <p><mark class="mark-rg">rg already created in az for sql server</mark></p>
-                                <p><mark class="mark-name">server already created in az</mark></p>
+                                <p><mark class="mark-rg">rg of sql server</mark></p>
+                                <p><mark class="mark-name">az sql server name</mark></p>
                                 <p><mark class="mark-name">name of db</mark></p>
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code9')">Copy</button>
-                            <code id='code9'>
-                                az sql db create --resource-group <mark class="mark-rg">atari-monk-az-sql-rg</mark> --server <mark class="mark-name">atari-monk-az-sql-server</mark> --name <mark class="mark-name">coreDb</mark>
+                            <button onclick="Copy('code10')">Copy</button>
+                            <code id='code10'>
+                                az sql db create --resource-group <mark class="mark-rg">az-sql-db1-rg</mark> --server <mark class="mark-name">atari-monk-sql-server1</mark> --name <mark class="mark-name">coreDb</mark>
                             </code>
                             <br>
                         </p>
@@ -241,18 +269,11 @@
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code10')">Copy</button>
-                            <code id='code10'>
-                                az webapp connection create sql --resource-group <mark class="mark-rg">az-web-app-db-tutorial-rg</mark> --name <mark class="mark-name">az-web-app-db-tutorial</mark> --target-resource-group <mark class="mark-rg">atari-monk-az-sql-rg</mark> --server <mark class="mark-name">atari-monk-az-sql-server</mark> --database <mark class="mark-name">coreDb</mark> --client-type <mark class="mark-option">dotnet</mark> --connection <mark class="mark-name">sql-9f108</mark> --query <mark class="mark-option">configurations</mark>
+                            <button onclick="Copy('code11')">Copy</button>
+                            <code id='code11'>
+                                az webapp connection create sql --resource-group <mark class="mark-rg">to-do-web-app-rg</mark> --name <mark class="mark-name">to-do-web-app</mark> --target-resource-group <mark class="mark-rg">az-sql-db1-rg</mark> --server <mark class="mark-name">atari-monk-sql-server1</mark> --database <mark class="mark-name">coreDb</mark> --client-type <mark class="mark-option">dotnet</mark> --connection <mark class="mark-name">sql-9f108</mark> --query <mark class="mark-option">configurations</mark>
                             </code>
                             <br>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Generate the Database Schema.
-                        </p>
-                        <p>
                         </p>
                     </li>
                     <li>
@@ -274,8 +295,8 @@
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code11')">Copy</button>
-                            <code id='code11'>
+                            <button onclick="Copy('code12')">Copy</button>
+                            <code id='code12'>
                                 "AZURE_SQL_CONNECTIONSTRING": "Data Source=<your-server-name>.database.windows.net,1433;Initial Catalog=coreDb;User ID=<username>;Password=<password>"
                             </code>
                             <br>
@@ -293,8 +314,8 @@
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code12')">Copy</button>
-                            <code id='code12'>
+                            <button onclick="Copy('code13')">Copy</button>
+                            <code id='code13'>
                                 services.AddDbContext<MyDatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING")));
                             </code>
                             <br>
@@ -315,28 +336,28 @@
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code13')">Copy</button>
-                            <code id='code13'>
-                                cd DotNetCoreSqlDb
-                            </code>
-                            <br>
                             <button onclick="Copy('code14')">Copy</button>
                             <code id='code14'>
-                                dotnet tool install -g dotnet-ef
+                                cd DotNetCoreSqlDb
                             </code>
                             <br>
                             <button onclick="Copy('code15')">Copy</button>
                             <code id='code15'>
-                                dotnet tool update -g dotnet-ef
+                                dotnet tool install -g dotnet-ef
                             </code>
                             <br>
                             <button onclick="Copy('code16')">Copy</button>
                             <code id='code16'>
-                                dotnet ef migrations add InitialCreate
+                                dotnet tool update -g dotnet-ef
                             </code>
                             <br>
                             <button onclick="Copy('code17')">Copy</button>
                             <code id='code17'>
+                                dotnet ef migrations add InitialCreate
+                            </code>
+                            <br>
+                            <button onclick="Copy('code18')">Copy</button>
+                            <code id='code18'>
                                 dotnet ef database update
                             </code>
                             <br>
@@ -363,8 +384,8 @@
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code18')">Copy</button>
-                            <code id='code18'>
+                            <button onclick="Copy('code19')">Copy</button>
+                            <code id='code19'>
                                 dotnet publish -c Release
                             </code>
                             <br>
@@ -379,15 +400,8 @@
                     </li>
                     <li>
                         <p>
-                            Test web app in the browser.
-                        </p>
-                        <p>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
                             Test web app in the browser.<br>In Azure Portal, Browse link at the top of the App Service
-                            overview page<br>
+                            overview page
                         </p>
                         <p>
                         </p>
@@ -404,8 +418,8 @@
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code19')">Copy</button>
-                            <code id='code19'>
+                            <button onclick="Copy('code20')">Copy</button>
+                            <code id='code20'>
                                 https://<app-name>.scm.azurewebsites.net
                             </code>
                             <br>
@@ -419,42 +433,49 @@
                             <details>
                                 <summary>details</summary>
                                 <p><mark class="mark-name">web app service name</mark></p>
-                                <p><mark class="mark-rg"></mark></p>
+                                <p><mark class="mark-rg">resource group</mark></p>
                                 <p><mark class="mark-name">web app service name</mark></p>
-                                <p><mark class="mark-rg">proj resource group name</mark></p>
+                                <p><mark class="mark-rg">resource group</mark></p>
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code20')">Copy</button>
-                            <code id='code20'>
-                                az webapp log config --web-server-logging 'filesystem' --name <mark class="mark-name">az-web-app-db-tutorial</mark> --resource-group <mark class="mark-rg">az-web-app-db-tutorial-rg</mark>
-                            </code>
-                            <br>
                             <button onclick="Copy('code21')">Copy</button>
                             <code id='code21'>
-                                az webapp log tail --name <mark class="mark-name">az-web-app-db-tutorial</mark> --resource-group <mark class="mark-rg">az-web-app-db-tutorial-rg</mark>
+                                az webapp log config --web-server-logging 'filesystem' --name <mark class="mark-name">to-do-web-app</mark> --resource-group <mark class="mark-rg">to-do-web-app-rg</mark>
+                            </code>
+                            <br>
+                            <button onclick="Copy('code22')">Copy</button>
+                            <code id='code22'>
+                                az webapp log tail --name <mark class="mark-name">to-do-web-app</mark> --resource-group <mark class="mark-rg">to-do-web-app-rg</mark>
                             </code>
                             <br>
                         </p>
                     </li>
                     <li>
                         <p>
-                            Clean up resources
+                            Clean up resources. App rg and plan rg.
                         </p>
                         <aside>
                             <details>
                                 <summary>details</summary>
-                                <p><mark class="mark-rg">proj resource group name</mark></p>
+                                <p><mark class="mark-rg">resource group</mark></p>
+                                <p><mark class="mark-rg">resource group</mark></p>
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code22')">Copy</button>
-                            <code id='code22'>
-                                az group delete --name <mark class="mark-rg">az-web-app-db-tutorial-rg</mark>
+                            <button onclick="Copy('code23')">Copy</button>
+                            <code id='code23'>
+                                az group delete --name <mark class="mark-rg">to-do-web-app-rg</mark>
+                            </code>
+                            <br>
+                            <button onclick="Copy('code24')">Copy</button>
+                            <code id='code24'>
+                                az group delete --name <mark class="mark-rg">atari-monk-appservice-plans-rg</mark>
                             </code>
                             <br>
                         </p>
                     </li>
+
                 </ol>
             </section>
         </article>
