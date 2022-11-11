@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="author" content="atari-monk" />
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="./css/main.css" type="text/css" />
     <script src="./js/tutorial.js"></script>
 </head>
-
 <body>
     <header>
         <h1 class="title">Azure SQL Database</h1>
@@ -78,7 +76,9 @@
                     </li>
                     <li>
                         <p>
-                            Check Azure CLI version.
+                            Check Azure CLI version. <a
+                                href="https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli">Azure
+                                CLI current msi</a>
                         </p>
                         <p>
                             <button onclick="Copy('code1')">Copy</button>
@@ -90,7 +90,7 @@
                     </li>
                     <li>
                         <p>
-                            Update Azure CLI.
+                            Update Azure CLI. (if needed)
                         </p>
                         <p>
                             <button onclick="Copy('code2')">Copy</button>
@@ -102,19 +102,7 @@
                     </li>
                     <li>
                         <p>
-                            Update Azure CLI.
-                        </p>
-                        <p>
-                            <button onclick="Copy('code2')">Copy</button>
-                            <code id='code2'>
-                                az upgrade
-                            </code>
-                            <br>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            During Azure CLI MSI install, phyton needed to be killed.
+                            During Azure CLI MSI install, phyton needed to be killed. (if needed)
                         </p>
                         <p>
                             <button onclick="Copy('code3')">Copy</button>
@@ -138,20 +126,20 @@
                     </li>
                     <li>
                         <p>
-                            Create resource group.
+                            Create resource group for this project.
                         </p>
                         <aside>
                             <details>
                                 <summary>details</summary>
-                                <p><mark class="mark-rg">Choose resource group name</mark></p>
+                                <p><mark class="mark-rg">resource group</mark></p>
                                 <p><mark class="mark-location">location</mark></p>
-                                <p><mark class="mark-tag">tag - descriptor</mark></p>
+                                <p><mark class="mark-tag">description tag</mark></p>
                             </details>
                         </aside>
                         <p>
                             <button onclick="Copy('code5')">Copy</button>
                             <code id='code5'>
-                                az group create --name <mark class="mark-rg">atari-monk-az-sql-rg</mark> --location <mark class="mark-location">swedencentral</mark> --tags <mark class="mark-tag">create-and-configure-database</mark>
+                                az group create --name <mark class="mark-rg">az-sql-db1-rg</mark> --location <mark class="mark-location">swedencentral</mark> --tags <mark class="mark-tag">create-and-configure-database</mark>
                             </code>
                             <br>
                         </p>
@@ -163,17 +151,17 @@
                         <aside>
                             <details>
                                 <summary>details</summary>
-                                <p><mark class="mark-name">Choose server name</mark></p>
-                                <p><mark class="mark-rg">Choose resource group name</mark></p>
+                                <p><mark class="mark-name">server name</mark></p>
+                                <p><mark class="mark-rg">resource group</mark></p>
                                 <p><mark class="mark-location">location</mark></p>
                                 <p><mark class="mark-login">server login</mark></p>
-                                <p><mark class="mark-password">Change it to your strong password</mark></p>
+                                <p><mark class="mark-password">server password</mark></p>
                             </details>
                         </aside>
                         <p>
                             <button onclick="Copy('code6')">Copy</button>
                             <code id='code6'>
-                                az sql server create --name <mark class="mark-name">atari-monk-az-sql-server</mark> --resource-group <mark class="mark-rg">atari-monk-az-sql-rg</mark> --location <mark class="mark-location">swedencentral</mark> --admin-user <mark class="mark-login">atari-monk-az</mark> --admin-password <mark class="mark-password">password</mark>
+                                az sql server create --name <mark class="mark-name">sql-server1</mark> --resource-group <mark class="mark-rg">az-sql-db1-rg</mark> --location <mark class="mark-location">swedencentral</mark> --admin-user <mark class="mark-login">atari-monk</mark> --admin-password <mark class="mark-password">password</mark>
                             </code>
                             <br>
                         </p>
@@ -185,18 +173,16 @@
                         <aside>
                             <details>
                                 <summary>details</summary>
-                                <p><mark class="mark-rg">Choose resource group name</mark></p>
-                                <p><mark class="mark-name">Choose server name</mark></p>
-                                <p><mark class="mark-ip">ip fillter, set your public ip, of pc you will use with this
-                                        db</mark></p>
-                                <p><mark class="mark-ip">ip fillter, set your public ip, of pc you will use with this
-                                        db</mark></p>
+                                <p><mark class="mark-rg">resource group</mark></p>
+                                <p><mark class="mark-name">server name</mark></p>
+                                <p><mark class="mark-ip">public ip of your admin pc</mark></p>
+                                <p><mark class="mark-ip">public ip of your admin pc</mark></p>
                             </details>
                         </aside>
                         <p>
                             <button onclick="Copy('code7')">Copy</button>
                             <code id='code7'>
-                                az sql server firewall-rule create --resource-group <mark class="mark-rg">atari-monk-az-sql-rg</mark> --server <mark class="mark-name">atari-monk-az-sql-server</mark> -n AllowYourIp --start-ip-address <mark class="mark-ip">start-ip</mark> --end-ip-address <mark class="mark-ip">end-ip</mark>
+                                az sql server firewall-rule create --resource-group <mark class="mark-rg">az-sql-db1-rg</mark> --server <mark class="mark-name">sql-server1</mark> -n AllowYourIp --start-ip-address <mark class="mark-ip">ip</mark> --end-ip-address <mark class="mark-ip">ip</mark>
                             </code>
                             <br>
                         </p>
@@ -208,13 +194,13 @@
                         <aside>
                             <details>
                                 <summary>details</summary>
-                                <p><mark class="mark-rg">Choose resource group name</mark></p>
+                                <p><mark class="mark-rg">resource group</mark></p>
                             </details>
                         </aside>
                         <p>
                             <button onclick="Copy('code8')">Copy</button>
                             <code id='code8'>
-                                az group delete --name <mark class="mark-rg">atari-monk-az-sql-rg</mark>
+                                az group delete --name <mark class="mark-rg">az-sql-db1-rg</mark>
                             </code>
                             <br>
                         </p>
@@ -249,5 +235,4 @@
         </p>
     </footer>
 </body>
-
 </html>
