@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="author" content="atari-monk" />
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="./css/main.css" type="text/css" />
     <script src="./js/tutorial.js"></script>
 </head>
-
 <body>
     <header>
         <h1 class="title">Deploy web app with db to azure</h1>
@@ -142,7 +140,7 @@
                         <p>
                             <button onclick="Copy('code5')">Copy</button>
                             <code id='code5'>
-                                az appservice plan create --name <mark class="mark-name">az-web-app-db-tutorial-plan</mark> --resource-group <mark class="mark-rg">az-web-app-db-tutorial-rg</mark> --sku <mark class="mark-option">F1</mark>
+                                az appservice plan create --name <mark class="mark-name">az-web-app-db-tutorial-plan</mark> --resource-group <mark class="mark-rg">az-web-app-db-tutorial-rg</mark> --is-linux --sku <mark class="mark-option">F1</mark>
                             </code>
                             <br>
                         </p>
@@ -188,7 +186,7 @@
                         <p>
                             <button onclick="Copy('code8')">Copy</button>
                             <code id='code8'>
-                                az webapp create --name <mark class="mark-name">az-web-app-db-tutorial</mark> --runtime "<mark class="mark-name">DOTNET|6.0</mark>" --plan <mark class="mark-name">az-web-app-db-tutorial-plan</mark> --resource-group <mark class="mark-rg">az-web-app-db-tutorial-rg</mark>
+                                az webapp create --name <mark class="mark-name">az-web-app-db-tutorial</mark> --runtime "<mark class="mark-name">DOTNETCORE:6.0</mark>" --plan <mark class="mark-name">az-web-app-db-tutorial-plan</mark> --resource-group <mark class="mark-rg">az-web-app-db-tutorial-rg</mark>
                             </code>
                             <br>
                         </p>
@@ -223,9 +221,9 @@
                     </li>
                     <li>
                         <p>
-                            Connect the App to the Database.<br>When prompted, provide the administrator username and
-                            password for the SQL database.<br>Copy this connection string value from the output for
-                            later.
+                            Connect the App to the Database.<br>When prompted, provide the login and password you used
+                            when creating azure sql server.<br>(Chars of password are not visible at all, but paste
+                            works)<br>Copy this connection string value from the output for later.
                         </p>
                         <aside>
                             <details>
@@ -235,14 +233,15 @@
                                 <p><mark class="mark-rg">rg witch contains the sql server</mark></p>
                                 <p><mark class="mark-name">server already created in az</mark></p>
                                 <p><mark class="mark-name">name of db</mark></p>
-                                <p><mark class="mark-name">To see the entirety of the command output, drop the --query
-                                        in the command</mark></p>
+                                <p><mark class="mark-option">client type</mark></p>
+                                <p><mark class="mark-name">connection name</mark></p>
+                                <p><mark class="mark-option">removing --query param will show more logs</mark></p>
                             </details>
                         </aside>
                         <p>
                             <button onclick="Copy('code10')">Copy</button>
                             <code id='code10'>
-                                az webapp connection create sql --resource-group <mark class="mark-rg">az-web-app-db-tutorial-rg</mark> --name <mark class="mark-name">az-web-app-db-tutorial</mark> --target-resource-group <mark class="mark-rg">atari-monk-az-sql-server</mark> --server <mark class="mark-name">atari-monk-az-sql-server</mark> --database <mark class="mark-name">coreDb</mark> --query <mark class="mark-name">configurations</mark>
+                                az webapp connection create sql --resource-group <mark class="mark-rg">az-web-app-db-tutorial-rg</mark> --name <mark class="mark-name">az-web-app-db-tutorial</mark> --target-resource-group <mark class="mark-rg">atari-monk-az-sql-rg</mark> --server <mark class="mark-name">atari-monk-az-sql-server</mark> --database <mark class="mark-name">coreDb</mark> --client-type <mark class="mark-option">dotnet</mark> --connection <mark class="mark-name">sql-9f108</mark> --query <mark class="mark-option">configurations</mark>
                             </code>
                             <br>
                         </p>
@@ -436,7 +435,6 @@
                             <br>
                         </p>
                     </li>
-
                 </ol>
             </section>
         </article>
@@ -457,5 +455,4 @@
         </p>
     </footer>
 </body>
-
 </html>
