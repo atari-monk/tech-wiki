@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="author" content="atari-monk" />
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="./css/main.css" type="text/css" />
     <script src="./js/tutorial.js"></script>
 </head>
+
 <body>
     <header>
         <h1 class="title">Deploy web app with db to azure</h1>
@@ -305,18 +307,36 @@
                         <aside>
                             <details>
                                 <summary>details</summary>
-                                <p><mark class="">Assuming root "C:\atari-monk\Code"</mark></p>
-                                <p><mark class="">run migrations</mark></p>
+                                <p><mark class="">you need to be in project with migrations folder</mark></p>
+                                <p><mark class="">if needed</mark></p>
+                                <p><mark class="">if needed</mark></p>
+                                <p><mark class="">if needed</mark></p>
+                                <p><mark class="">run migrations on db</mark></p>
                             </details>
                         </aside>
                         <p>
                             <button onclick="Copy('code13')">Copy</button>
                             <code id='code13'>
-                                cd msdocs-app-service-sqldb-dotnetcore\DotNetCoreSqlDb
+                                cd DotNetCoreSqlDb
                             </code>
                             <br>
                             <button onclick="Copy('code14')">Copy</button>
                             <code id='code14'>
+                                dotnet tool install -g dotnet-ef
+                            </code>
+                            <br>
+                            <button onclick="Copy('code15')">Copy</button>
+                            <code id='code15'>
+                                dotnet tool update -g dotnet-ef
+                            </code>
+                            <br>
+                            <button onclick="Copy('code16')">Copy</button>
+                            <code id='code16'>
+                                dotnet ef migrations add InitialCreate
+                            </code>
+                            <br>
+                            <button onclick="Copy('code17')">Copy</button>
+                            <code id='code17'>
                                 dotnet ef database update
                             </code>
                             <br>
@@ -343,8 +363,8 @@
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code15')">Copy</button>
-                            <code id='code15'>
+                            <button onclick="Copy('code18')">Copy</button>
+                            <code id='code18'>
                                 dotnet publish -c Release
                             </code>
                             <br>
@@ -384,8 +404,8 @@
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code16')">Copy</button>
-                            <code id='code16'>
+                            <button onclick="Copy('code19')">Copy</button>
+                            <code id='code19'>
                                 https://<app-name>.scm.azurewebsites.net
                             </code>
                             <br>
@@ -405,13 +425,13 @@
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code17')">Copy</button>
-                            <code id='code17'>
+                            <button onclick="Copy('code20')">Copy</button>
+                            <code id='code20'>
                                 az webapp log config --web-server-logging 'filesystem' --name <mark class="mark-name">az-web-app-db-tutorial</mark> --resource-group <mark class="mark-rg">az-web-app-db-tutorial-rg</mark>
                             </code>
                             <br>
-                            <button onclick="Copy('code18')">Copy</button>
-                            <code id='code18'>
+                            <button onclick="Copy('code21')">Copy</button>
+                            <code id='code21'>
                                 az webapp log tail --name <mark class="mark-name">az-web-app-db-tutorial</mark> --resource-group <mark class="mark-rg">az-web-app-db-tutorial-rg</mark>
                             </code>
                             <br>
@@ -428,8 +448,8 @@
                             </details>
                         </aside>
                         <p>
-                            <button onclick="Copy('code19')">Copy</button>
-                            <code id='code19'>
+                            <button onclick="Copy('code22')">Copy</button>
+                            <code id='code22'>
                                 az group delete --name <mark class="mark-rg">az-web-app-db-tutorial-rg</mark>
                             </code>
                             <br>
@@ -455,4 +475,5 @@
         </p>
     </footer>
 </body>
+
 </html>
