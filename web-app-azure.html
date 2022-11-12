@@ -81,7 +81,7 @@
                     </li>
                     <li>
                         <p>
-                            Clone example repo.
+                            Clone example repo. (Prerequisite)
                         </p>
                         <p>
                             <button onclick="Copy('code1')">Copy</button>
@@ -98,7 +98,7 @@
                     </li>
                     <li>
                         <p>
-                            Create new repo on github. Named to-do-web-app. Copy project there and commit.
+                            Create new repo on github. Named todo-web-app. Copy project there and commit. (Prerequisite)
                         </p>
                         <p>
                         </p>
@@ -130,7 +130,7 @@
                         <p>
                             <button onclick="Copy('code4')">Copy</button>
                             <code id='code4'>
-                                az group create --name <mark class="mark-rg">to-do-web-app-rg</mark> --location <mark class="mark-location">swedencentral</mark> --tags <mark class="mark-tag">to-do-web-app</mark>
+                                az group create --name <mark class="mark-rg">todo-web-app-rg</mark> --location <mark class="mark-location">swedencentral</mark> --tags <mark class="mark-tag">todo-web-app resource group</mark>
                             </code>
                             <br>
                         </p>
@@ -150,7 +150,7 @@
                         <p>
                             <button onclick="Copy('code5')">Copy</button>
                             <code id='code5'>
-                                az group create --name <mark class="mark-rg">atari-monk-appservice-plans-rg</mark> --location <mark class="mark-location">swedencentral</mark> --tags <mark class="mark-tag">appservice-plans rg</mark>
+                                az group create --name <mark class="mark-rg">atari-monk-appservice-plans-rg</mark> --location <mark class="mark-location">swedencentral</mark> --tags <mark class="mark-tag">appservice-plans resource group</mark>
                             </code>
                             <br>
                         </p>
@@ -207,7 +207,7 @@
                             <details>
                                 <summary>details</summary>
                                 <p><mark class="mark-name">Generates domain name https://<app service name>
-                                            .azurewebsites.com</mark></p>
+                                            .azurewebsites.com (needs to be unique in azuzre)</mark></p>
                                 <p><mark class="mark-name">runtime</mark></p>
                                 <p><mark class="mark-name"></mark></p>
                                 <p><mark class="mark-rg">resource group</mark></p>
@@ -216,7 +216,7 @@
                         <p>
                             <button onclick="Copy('code9')">Copy</button>
                             <code id='code9'>
-                                az webapp create --name <mark class="mark-name">to-do-web-app</mark> --runtime "<mark class="mark-name">DOTNETCORE:6.0</mark>" --plan <mark class="mark-name">atari-monk-appservice-plan1</mark> --resource-group <mark class="mark-rg">to-do-web-app-rg</mark>
+                                az webapp create --name <mark class="mark-name">atari-monk-todo-web-app</mark> --runtime "<mark class="mark-name">DOTNETCORE:7.0</mark>" --plan <mark class="mark-name">atari-monk-appservice-plan1</mark> --resource-group <mark class="mark-rg">todo-web-app-rg</mark>
                             </code>
                             <br>
                         </p>
@@ -252,7 +252,7 @@
                     <li>
                         <p>
                             Connect the App to the Database.<br>When prompted, provide the login and password you used
-                            when creating azure sql server.<br>(Chars of password are not visible at all, but paste
+                            when creating azure sql server!.<br>(Chars of password are not visible at all, but paste
                             works)<br>Copy this connection string value from the output for later.
                         </p>
                         <aside>
@@ -271,7 +271,7 @@
                         <p>
                             <button onclick="Copy('code11')">Copy</button>
                             <code id='code11'>
-                                az webapp connection create sql --resource-group <mark class="mark-rg">to-do-web-app-rg</mark> --name <mark class="mark-name">to-do-web-app</mark> --target-resource-group <mark class="mark-rg">az-sql-db1-rg</mark> --server <mark class="mark-name">atari-monk-sql-server1</mark> --database <mark class="mark-name">coreDb</mark> --client-type <mark class="mark-option">dotnet</mark> --connection <mark class="mark-name">sql-9f108</mark> --query <mark class="mark-option">configurations</mark>
+                                az webapp connection create sql --resource-group <mark class="mark-rg">todo-web-app-rg</mark> --name <mark class="mark-name">atari-monk-todo-web-app</mark> --target-resource-group <mark class="mark-rg">az-sql-db1-rg</mark> --server <mark class="mark-name">atari-monk-sql-server1</mark> --database <mark class="mark-name">coreDb</mark> --client-type <mark class="mark-option">dotnet</mark> --connection <mark class="mark-name">sql_e73o5</mark> --query <mark class="mark-option">configurations</mark>
                             </code>
                             <br>
                         </p>
@@ -441,12 +441,12 @@
                         <p>
                             <button onclick="Copy('code21')">Copy</button>
                             <code id='code21'>
-                                az webapp log config --web-server-logging 'filesystem' --name <mark class="mark-name">to-do-web-app</mark> --resource-group <mark class="mark-rg">to-do-web-app-rg</mark>
+                                az webapp log config --web-server-logging 'filesystem' --name <mark class="mark-name">todo-web-app</mark> --resource-group <mark class="mark-rg">todo-web-app-rg</mark>
                             </code>
                             <br>
                             <button onclick="Copy('code22')">Copy</button>
                             <code id='code22'>
-                                az webapp log tail --name <mark class="mark-name">to-do-web-app</mark> --resource-group <mark class="mark-rg">to-do-web-app-rg</mark>
+                                az webapp log tail --name <mark class="mark-name">todo-web-app</mark> --resource-group <mark class="mark-rg">todo-web-app-rg</mark>
                             </code>
                             <br>
                         </p>
@@ -465,7 +465,7 @@
                         <p>
                             <button onclick="Copy('code23')">Copy</button>
                             <code id='code23'>
-                                az group delete --name <mark class="mark-rg">to-do-web-app-rg</mark>
+                                az group delete --name <mark class="mark-rg">todo-web-app-rg</mark>
                             </code>
                             <br>
                             <button onclick="Copy('code24')">Copy</button>
@@ -475,7 +475,6 @@
                             <br>
                         </p>
                     </li>
-
                 </ol>
             </section>
         </article>
