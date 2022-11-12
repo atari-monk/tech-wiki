@@ -1,77 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="atari-monk" />
+        <meta
+            name="description"
+            content="This page is main page of my tech wiki."
+        />
+        <title>Tech Wiki Web Page</title>
+        <link rel="icon" href="./images/html5.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/main.css" type="text/css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="author" content="atari-monk" />
-    <meta name="description" content="This page is main page of my tech wiki." />
-    <title>Tech Wiki Web Page</title>
-    <link rel="icon" href="./images/html5.png" type="image/x-icon" />
-    <link rel="stylesheet" href="./css/main.css" type="text/css" />
-</head>
-
-<body>
-    <header>
-        <h1 class="title">atari-monk tech wiki</h1>
-        <nav aria-label="primary-navigation">
-            <ul>
-                <li>
-                    <a href="#containers">Conteners</a>
-                </li>
-                <li>
-                    <a href="#azure">Azure</a>
-                </li>
-                <li>
-                    <a href="#install">Install</a>
-                </li>
-                <li>
-                    <a href="#game">Game</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <hr />
-    <main>
-        <article id="containers">
-            <h2>Conteners</h2>
-            <section class="list-point">
-                <a href="./deploy-voting-app.html">Deploy VotingApp with Docker Compose on Azure</a>
-            </section>
-        </article>
-        <article id="azure">
-            <h2>Azure</h2>
-            <section class="list-point">
-                <a href="./azure-sql-db.html">Azure SQL Database</a>
-            </section>
-            <section class="list-point">
-                <a href="./ssms-connect-az-sql-db.html">Connect SSMS to Azure SQL Database</a>
-            </section>
-            <section class="list-point">
-                <a href="./web-app-azure.html">Deploy web app with db to azure</a>
-            </section>
-        </article>
-        <article id="install">
-            <h2>Install</h2>
-            <section class="list-point">
-                <a href="./cpp-compiler.html">C++ compiler</a>
-            </section>
-        </article>
-        <article id="game">
-            <h2>Game</h2>
-            <section class="list-point">
-                <a href="./rect-collision.html">Collision detection between rectangles</a>
-            </section>
-        </article>
-    </main>
-    <hr />
-    <footer>
-        <p>
-            &lt;&lt;&lt; <a href="https://github.com/atari-monk">atari-monk</a> &gt;&gt;&gt;
-        </p>
-        <p>
-            <a href="#">Back to Top</a>
-        </p>
-    </footer>
-</body>
-
+    <body>
+        <header>
+            <h1 class="title">atari-monk tech wiki</h1>
+            <nav aria-label="primary-navigation">
+                <ul>
+                    <li class="list-point">
+                        <a href="#dotnet">.Net</a>
+                    </li>
+                    <li class="list-point">
+                        <a href="#containers">Conteners</a>
+                    </li>
+                    <li class="list-point">
+                        <a href="#azure">Azure</a>
+                    </li>
+                    <li class="list-point">
+                        <a href="#install">Install</a>
+                    </li>
+                    <li class="list-point">
+                        <a href="#game">Game</a>
+                    </li>
+                    <li class="list-point">
+                        <a href="#techwiki">tech wiki</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <hr />
+        <main>
+            <article id="dotnet">
+                <h2>.Net</h2>
+                <section class="list-point">
+                    <ol>
+                        <li class="list-point">
+                            <a href="./secrets.html">Secrets</a>
+                        </li>
+                    </ol>
+                </section>
+            </article>
+            <article id="containers">
+                <h2>Conteners</h2>
+                <section class="list-point">
+                    <ol>
+                        <li class="list-point">
+                            <a href="./voting-app-azure.html"
+                                >Deploy VotingApp with Docker Compose on
+                                Azure</a
+                            >
+                        </li>
+                    </ol>
+                </section>
+            </article>
+            <article id="azure">
+                <h2>Azure</h2>
+                <section class="list-point">
+                    <ol>
+                        <li class="list-point">
+                            <a href="./azure-sql-db.html">Azure SQL Database</a>
+                        </li>
+                        <li class="list-point">
+                            <a href="./ssms-azure.html"
+                                >Connect SSMS to Azure SQL Database</a
+                            >
+                        </li>
+                        <li class="list-point">
+                            <a href="./todo-app-azure.html"
+                                >Todo - web app with db, deploy to azure.</a
+                            >
+                        </li>
+                    </ol>
+                </section>
+            </article>
+            <article id="install">
+                <h2>Install</h2>
+                <section class="list-point">
+                    <ol>
+                        <li class="list-point">
+                            <a href="./cpp-compiler.html">C++ compiler</a>
+                        </li>
+                        <li class="list-point">
+                            <a href="./vscode-extensions.html"
+                                >VSCode extensions</a
+                            >
+                        </li>
+                    </ol>
+                </section>
+            </article>
+            <article id="game">
+                <h2>Game</h2>
+                <section class="list-point">
+                    <ol>
+                        <li class="list-point">
+                            <a href="./rect-collision.html"
+                                >Collision detection between rectangles</a
+                            >
+                        </li>
+                    </ol>
+                </section>
+            </article>
+            <article id="techwiki">
+                <h2>tech wiki</h2>
+                <section class="list-point">
+                    <ol>
+                        <li class="list-point">
+                            <a href="./tutorial-schema.html"
+                                >Schema of tutorial page</a
+                            >
+                        </li>
+                    </ol>
+                </section>
+            </article>
+        </main>
+        <hr />
+        <footer>
+            <p>
+                &lt;&lt;&lt;
+                <a href="https://github.com/atari-monk">atari-monk</a>
+                &gt;&gt;&gt;
+            </p>
+            <p>
+                <a href="#">Back to Top</a>
+            </p>
+        </footer>
+    </body>
 </html>
