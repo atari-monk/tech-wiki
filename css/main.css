@@ -4,7 +4,7 @@
   --marked-text: black;
 }
 html {
-  font-size: 20px;
+  font-size: 16px;
 }
 body {
   background-color: var(--background);
