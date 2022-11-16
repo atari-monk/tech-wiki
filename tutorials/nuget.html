@@ -43,7 +43,10 @@
                             <a href="https://learn.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli">Source tutorial</a>
                         </li>
                         <li class="list-point">
-                            <a href="">Example</a>
+                            <a href="https://stackoverflow.com/questions/43400069/add-a-package-with-a-local-package-file-in-dotnet">Add a package with a local package file in 'dotnet'</a>
+                        </li>
+                        <li class="list-point">
+                            <a href="https://github.com/dasMulli/LocalNupkgExample">LocalNupkgExample</a>
                         </li>
                     </ol>
                 </section>
@@ -146,18 +149,70 @@
                         </li>
                         <li>
                             <p>
-                                Use nuget command.
+                                Produce nuget file with dotnet cli.
                             </p>
                             <aside>
                                 <details>
                                     <summary>details</summary>
-                                    <p><mark class="">nuget path in output</mark></p>
+                                    <p><mark class="">cd folder with csproj file</mark></p>
+                                    <p><mark class="">clear your local packages cache</mark></p>
+                                    <p><mark class="">clear your local packages cache</mark></p>
+                                    <p><mark class="mark-name">build path</mark></p>
                                 </details>
                             </aside>
                             <p>
                                 <button onclick="Copy('code6')">Copy</button>
                                 <code id='code6'>
-                                    dotnet pack
+                                    cd C:\atari-monk\Code\connection-builder\Connection.Builder
+                                </code>
+                                <br>
+                                <button onclick="Copy('code7')">Copy</button>
+                                <code id='code7'>
+                                    dotnet nuget locals all --clear
+                                </code>
+                                <br>
+                                <button onclick="Copy('code8')">Copy</button>
+                                <code id='code8'>
+                                    dotnet restore
+                                </code>
+                                <br>
+                                <button onclick="Copy('code9')">Copy</button>
+                                <code id='code9'>
+                                    dotnet pack -c Release -o <mark class="mark-name">C:\atari-monk\Build\connection-builder</mark>
+                                </code>
+                                <br>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                In target csproj file, add local nuget source. (also nuget.org)
+                            </p>
+                            <p>
+                                <button onclick="Copy('code10')">Copy</button>
+                                <code id='code10'>
+                                    <RestoreSources>$(RestoreSources);C:\atari-monk\Build\connection-builder;https://api.nuget.org/v3/index.json</RestoreSources>
+                                </code>
+                                <br>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Consume nuget in target project.
+                            </p>
+                            <p>
+                                <button onclick="Copy('code11')">Copy</button>
+                                <code id='code11'>
+                                    cd C:\atari-monk\Code\todo-web-app\TodoWebApp
+                                </code>
+                                <br>
+                                <button onclick="Copy('code12')">Copy</button>
+                                <code id='code12'>
+                                    dotnet add package Connection.Builder.15.11.2022.001.Test
+                                </code>
+                                <br>
+                                <button onclick="Copy('code13')">Copy</button>
+                                <code id='code13'>
+                                    dotnet restore
                                 </code>
                                 <br>
                             </p>
