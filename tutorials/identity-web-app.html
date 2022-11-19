@@ -43,7 +43,7 @@
                             <a href="https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-7.0&tabs=netcore-cli">Source tutorial</a>
                         </li>
                         <li class="list-point">
-                            <a href="">Result</a>
+                            <a href="https://learn.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-7.0&tabs=netcore-cli">Additional tutorial</a>
                         </li>
                     </ol>
                 </section>
@@ -216,16 +216,67 @@
                         </li>
                         <li>
                             <p>
-                                Scaffold Identity UI.
+                                Scaffold Identity UI. Use commands you acctualy need for this. Below some set.
                             </p>
+                            <aside>
+                                <details>
+                                    <summary>details</summary>
+                                    <p><mark class="mark-option">all the available Identity UI pages will be created in your project</mark></p>
+                                </details>
+                            </aside>
                             <p>
-                                <button onclick="Copy('code1')">Copy</button>
-                                <code id='code1'>
-                                    
+                                <button onclick="Copy('code15')">Copy</button>
+                                <code id='code15'>
+                                    dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+                                </code>
+                                <br>
+                                <button onclick="Copy('code16')">Copy</button>
+                                <code id='code16'>
+                                    dotnet add package Microsoft.EntityFrameworkCore.Design
+                                </code>
+                                <br>
+                                <button onclick="Copy('code17')">Copy</button>
+                                <code id='code17'>
+                                    dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
+                                </code>
+                                <br>
+                                <button onclick="Copy('code18')">Copy</button>
+                                <code id='code18'>
+                                    dotnet add package Microsoft.AspNetCore.Identity.UI
+                                </code>
+                                <br>
+                                <button onclick="Copy('code19')">Copy</button>
+                                <code id='code19'>
+                                    dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+                                </code>
+                                <br>
+                                <button onclick="Copy('code20')">Copy</button>
+                                <code id='code20'>
+                                    dotnet add package Microsoft.EntityFrameworkCore.Tools
+                                </code>
+                                <br>
+                                <button onclick="Copy('code21')">Copy</button>
+                                <code id='code21'>
+                                    dotnet tool install -g dotnet-aspnet-codegenerator
+                                </code>
+                                <br>
+                                <button onclick="Copy('code22')">Copy</button>
+                                <code id='code22'>
+                                    dotnet tool update -g dotnet-aspnet-codegenerator
+                                </code>
+                                <br>
+                                <button onclick="Copy('code23')">Copy</button>
+                                <code id='code23'>
+                                    dotnet aspnet-codegenerator identity -h
+                                </code>
+                                <br>
+                                <button onclick="Copy('code24')">Copy</button>
+                                <code id='code24'>
+                                    dotnet aspnet-codegenerator identity -dc Identity.WebApp.Data.ApplicationDbContext <mark class="mark-option">--useDefaultUI</mark>
                                 </code>
                                 <br>
                             </p>
-                        </li>         
+                        </li>   
                     </ol>
                 </section>
             </article>
