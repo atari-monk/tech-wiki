@@ -202,7 +202,7 @@
                         </li>
                         <li>
                             <p>
-                                Configure Identity services.<br>I copied default settings from msdocs and put it in class invoked in program.cs.
+                                Configure Identity services.<br>I copied default settings from msdocs and put it in class invoked in program.cs.<br>It's refactored to better readability.
                             </p>
                             <p>
                             </p>
@@ -221,7 +221,7 @@
                             <aside>
                                 <details>
                                     <summary>details</summary>
-                                    <p><mark class="mark-option">all the available Identity UI pages will be created in your project</mark></p>
+                                    <p><mark class="mark-desc">this should generate all available UI</mark></p>
                                 </details>
                             </aside>
                             <p>
@@ -272,11 +272,30 @@
                                 <br>
                                 <button onclick="Copy('code24')">Copy</button>
                                 <code id='code24'>
-                                    dotnet aspnet-codegenerator identity -dc Identity.WebApp.Data.ApplicationDbContext <mark class="mark-option">--useDefaultUI</mark>
+                                    dotnet aspnet-codegenerator identity -dc Identity.WebApp.Data.ApplicationDbContext
                                 </code>
                                 <br>
                             </p>
-                        </li>   
+                        </li>
+                        <li>
+                            <p>
+                                Error thrown.
+                            </p>
+                            <p>
+                                <button onclick="Copy('code1')">Copy</button>
+                                <code id='code1'>
+                                    Cannot use an existing DbContext with the '--useDefaultUI' option
+                                </code>
+                                <br>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Removed --useDefaultUI from command. Fixed error.
+                            </p>
+                            <p>
+                            </p>
+                        </li>                           
                     </ol>
                 </section>
             </article>
