@@ -282,8 +282,8 @@
                                 Error thrown.
                             </p>
                             <p>
-                                <button onclick="Copy('code1')">Copy</button>
-                                <code id='code1'>
+                                <button onclick="Copy('code25')">Copy</button>
+                                <code id='code25'>
                                     Cannot use an existing DbContext with the '--useDefaultUI' option
                                 </code>
                                 <br>
@@ -295,7 +295,94 @@
                             </p>
                             <p>
                             </p>
-                        </li>                           
+                        </li>
+                        <li>
+                            <p>
+                                Removed null warns/problems from generated code.
+                            </p>
+                            <p>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Add [Authorize] on privacy page in controller. To test identity.
+                            </p>
+                            <p>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Upgraded connection builder to handle locally trusted connection.<br>I dont like to clear all nugets, it take ages to restore them after that.
+                            </p>
+                            <p>
+                                <button onclick="Copy('code26')">Copy</button>
+                                <code id='code26'>
+                                    dotnet nuget locals temp -c
+                                </code>
+                                <br>
+                                <button onclick="Copy('code27')">Copy</button>
+                                <code id='code27'>
+                                    dotnet nuget locals global-packages -c
+                                </code>
+                                <br>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Created local db by ef core migrations.
+                            </p>
+                            <p>
+                                <button onclick="Copy('code28')">Copy</button>
+                                <code id='code28'>
+                                    dotnet ef database update
+                                </code>
+                                <br>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Tested register, login, logout locally.
+                            </p>
+                            <p>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Below commands was used to deploy to Azure.
+                            </p>
+                            <p>
+                                <button onclick="Copy('code29')">Copy</button>
+                                <code id='code29'>
+                                    az login
+                                </code>
+                                <br>
+                                <button onclick="Copy('code30')">Copy</button>
+                                <code id='code30'>
+                                    az group create --name identity-web-app-rg --location swedencentral --tags identity-web-app resource group
+                                </code>
+                                <br>
+                                <button onclick="Copy('code31')">Copy</button>
+                                <code id='code31'>
+                                    az webapp create --name atari-monk-identity-web-app --runtime 'DOTNETCORE:7.0' --plan atari-monk-appservice-plan1 --resource-group identity-web-app-rg
+                                </code>
+                                <br>
+                                <button onclick="Copy('code32')">Copy</button>
+                                <code id='code32'>
+                                    az sql db create --resource-group az-sql-db1-rg --server atari-monk-sql-server1 --name identityDb
+                                </code>
+                                <br>
+                                <button onclick="Copy('code33')">Copy</button>
+                                <code id='code33'>
+                                    az webapp connection create sql --resource-group identity-web-app-rg --name atari-monk-identity-web-app --target-resource-group az-sql-db1-rg --server atari-monk-sql-server1 --database identityDb --client-type dotnet --query configurations
+                                </code>
+                                <br>
+                                <button onclick="Copy('code34')">Copy</button>
+                                <code id='code34'>
+                                    
+                                </code>
+                                <br>
+                            </p>
+                        </li>                                                   
                     </ol>
                 </section>
             </article>

@@ -155,7 +155,7 @@
                                 <details>
                                     <summary>details</summary>
                                     <p><mark class="">cd folder with csproj file</mark></p>
-                                    <p><mark class="">clear your local packages cache</mark></p>
+                                    <p><mark class="">clear your local packages cache (try to use below, this one takes ages to restore after)</mark></p>
                                     <p><mark class="">clear your local packages cache</mark></p>
                                     <p><mark class="mark-name">build path</mark></p>
                                 </details>
@@ -173,11 +173,21 @@
                                 <br>
                                 <button onclick="Copy('code8')">Copy</button>
                                 <code id='code8'>
-                                    dotnet restore
+                                    dotnet nuget locals temp -c
                                 </code>
                                 <br>
                                 <button onclick="Copy('code9')">Copy</button>
                                 <code id='code9'>
+                                    dotnet nuget locals global-packages -c
+                                </code>
+                                <br>
+                                <button onclick="Copy('code10')">Copy</button>
+                                <code id='code10'>
+                                    dotnet restore
+                                </code>
+                                <br>
+                                <button onclick="Copy('code11')">Copy</button>
+                                <code id='code11'>
                                     dotnet pack -c Release -o <mark class="mark-name">C:\atari-monk\Build\nugets</mark>
                                 </code>
                                 <br>
@@ -188,8 +198,8 @@
                                 In target csproj file, add local nuget source. (also nuget.org)
                             </p>
                             <p>
-                                <button onclick="Copy('code10')">Copy</button>
-                                <code id='code10'>
+                                <button onclick="Copy('code12')">Copy</button>
+                                <code id='code12'>
                                     &lt;RestoreSources&gt;$(RestoreSources);C:\atari-monk\Build\nugets;https://api.nuget.org/v3/index.json&lt;/RestoreSources&gt;
                                 </code>
                                 <br>
@@ -206,23 +216,23 @@
                                 </details>
                             </aside>
                             <p>
-                                <button onclick="Copy('code11')">Copy</button>
-                                <code id='code11'>
+                                <button onclick="Copy('code13')">Copy</button>
+                                <code id='code13'>
                                     cd C:\atari-monk\Code\repo\proj
                                 </code>
                                 <br>
-                                <button onclick="Copy('code12')">Copy</button>
-                                <code id='code12'>
+                                <button onclick="Copy('code14')">Copy</button>
+                                <code id='code14'>
                                     dotnet add package <mark class="mark-name">Connection.Builder.19.11.2022</mark>
                                 </code>
                                 <br>
-                                <button onclick="Copy('code13')">Copy</button>
-                                <code id='code13'>
+                                <button onclick="Copy('code15')">Copy</button>
+                                <code id='code15'>
                                     dotnet restore
                                 </code>
                                 <br>
                             </p>
-                        </li>                                                              
+                        </li>                        
                     </ol>
                 </section>
             </article>
