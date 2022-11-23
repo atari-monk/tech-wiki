@@ -348,8 +348,14 @@
                         </li>
                         <li>
                             <p>
-                                Below commands was used to deploy to Azure.
+                                Below commands was used to deploy to Azure.<br>As output, there is connection string.<br>Based on <a href='todo-app-azure.html'>todo-app-azure</a>.
                             </p>
+                            <aside>
+                                <details>
+                                    <summary>details</summary>
+                                    <p><mark class="mark-desc">sometimes it returns this, with id, to log with cell phone</mark></p>
+                                </details>
+                            </aside>
                             <p>
                                 <button onclick="Copy('code29')">Copy</button>
                                 <code id='code29'>
@@ -358,31 +364,89 @@
                                 <br>
                                 <button onclick="Copy('code30')">Copy</button>
                                 <code id='code30'>
-                                    az group create --name identity-web-app-rg --location swedencentral --tags identity-web-app resource group
+                                    az login --tenant id
                                 </code>
                                 <br>
                                 <button onclick="Copy('code31')">Copy</button>
                                 <code id='code31'>
-                                    az webapp create --name atari-monk-identity-web-app --runtime 'DOTNETCORE:7.0' --plan atari-monk-appservice-plan1 --resource-group identity-web-app-rg
+                                    az group create --name identity-web-app-rg --location swedencentral --tags identity-web-app resource group
                                 </code>
                                 <br>
                                 <button onclick="Copy('code32')">Copy</button>
                                 <code id='code32'>
-                                    az sql db create --resource-group az-sql-db1-rg --server atari-monk-sql-server1 --name identityDb
+                                    az webapp create --name atari-monk-identity-web-app --runtime 'DOTNETCORE:7.0' --plan atari-monk-appservice-plan1 --resource-group identity-web-app-rg
                                 </code>
                                 <br>
                                 <button onclick="Copy('code33')">Copy</button>
                                 <code id='code33'>
-                                    az webapp connection create sql --resource-group identity-web-app-rg --name atari-monk-identity-web-app --target-resource-group az-sql-db1-rg --server atari-monk-sql-server1 --database identityDb --client-type dotnet --query configurations
+                                    az sql db create --resource-group az-sql-db1-rg --server atari-monk-sql-server1 --name identityDb
                                 </code>
                                 <br>
                                 <button onclick="Copy('code34')">Copy</button>
                                 <code id='code34'>
-                                    
+                                    az webapp connection create sql --resource-group identity-web-app-rg --name atari-monk-identity-web-app --target-resource-group az-sql-db1-rg --server atari-monk-sql-server1 --database identityDb --client-type dotnet --query configurations
                                 </code>
                                 <br>
                             </p>
-                        </li>                                                   
+                        </li>
+                        <li>
+                            <p>
+                                Connection string from Azure was input as local secrets.<br>Based on <a href='secrets.html'>secrets</a> and <a href='azure-secrets.html'>azure secrets</a>.
+                            </p>
+                            <p>
+                                <button onclick="Copy('code35')">Copy</button>
+                                <code id='code35'>
+                                    dotnet user-secrets set 'Server' 'atari-monk-sql-server1.database.windows.net'
+                                </code>
+                                <br>
+                                <button onclick="Copy('code36')">Copy</button>
+                                <code id='code36'>
+                                    dotnet user-secrets set 'DbPort' '1433'
+                                </code>
+                                <br>
+                                <button onclick="Copy('code37')">Copy</button>
+                                <code id='code37'>
+                                    dotnet user-secrets set 'DbUser' 'atari-monk'
+                                </code>
+                                <br>
+                                <button onclick="Copy('code38')">Copy</button>
+                                <code id='code38'>
+                                    dotnet user-secrets set 'DbPassword' 'x'
+                                </code>
+                                <br>
+                                <button onclick="Copy('code39')">Copy</button>
+                                <code id='code39'>
+                                    dotnet user-secrets set 'Database' 'identityDb'
+                                </code>
+                                <br>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Deploy migrations on Azure sql server.
+                            </p>
+                            <p>
+                                <button onclick="Copy('code1')">Copy</button>
+                                <code id='code1'>
+                                    dotnet ef database update
+                                </code>
+                                <br>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Build and Deploy web app on Azure App Services. (Right-click on publish folder and select Deploy to Web App). Test app.
+                            </p>
+                            <p>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                At this point i had realised that db on Azure was above S0 witch costed me. Had to mail with support. They agread to forgive cost on 04.12.2022.<br>I deleted all resources before mailing with them.
+                            </p>
+                            <p>
+                            </p>
+                        </li>                        
                     </ol>
                 </section>
             </article>
