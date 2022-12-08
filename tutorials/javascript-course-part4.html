@@ -79,7 +79,213 @@
                 <h2>Tutorial</h2>
                 <section>
                     <ol>
-                      
+                      <li>
+    <p>
+        Strict Mode, use it to produce better code
+    </p>
+    <p>
+        <button onclick="Copy('code1')">Copy</button>
+        <code id='code1'>
+            'use strict';
+        </code>
+        <br>
+        <button onclick="Copy('code2')">Copy</button>
+        <code id='code2'>
+            more errors info, block some features to work with less problems
+        </code>
+        <br>
+        <button onclick="Copy('code3')">Copy</button>
+        <code id='code3'>
+            not defined variables are trown as exceptions
+        </code>
+        <br>
+        <button onclick="Copy('code4')">Copy</button>
+        <code id='code4'>
+            reserves some words as future lang features
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Functions - like variable/container for chunk of code
+    </p>
+    <p>
+        <button onclick="Copy('code5')">Copy</button>
+        <code id='code5'>
+            function logger() { ... }
+        </code>
+        <br>
+        <button onclick="Copy('code6')">Copy</button>
+        <code id='code6'>
+            logger();<br>logger();<br>logger()
+        </code>
+        <br>
+        <button onclick="Copy('code7')">Copy</button>
+        <code id='code7'>
+            Code reuse
+        </code>
+        <br>
+        <button onclick="Copy('code8')">Copy</button>
+        <code id='code8'>
+            input, output; analogy to machine
+        </code>
+        <br>
+        <button onclick="Copy('code9')">Copy</button>
+        <code id='code9'>
+            function logger(x,y) { const z = `${x},${y}`; return z; }
+        </code>
+        <br>
+        <button onclick="Copy('code10')">Copy</button>
+        <code id='code10'>
+            const valz = logger(valx,valy);
+        </code>
+        <br>
+        <button onclick="Copy('code11')">Copy</button>
+        <code id='code11'>
+            Allow more maintanable code, DRY - dont repeat yourself
+        </code>
+        <br>
+        <button onclick="Copy('code12')">Copy</button>
+        <code id='code12'>
+            Functions can call functions.
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Functions Declarations VS Expressions
+    </p>
+    <p>
+        <button onclick="Copy('code13')">Copy</button>
+        <code id='code13'>
+            Declaration is named function as shown in above section point.
+        </code>
+        <br>
+        <button onclick="Copy('code14')">Copy</button>
+        <code id='code14'>
+            Function Expression is annonymous function that can be stored as variable.
+        </code>
+        <br>
+        <button onclick="Copy('code15')">Copy</button>
+        <code id='code15'>
+            const calcAge = function (birthYear) { return 2037 - birthYear; }
+        </code>
+        <br>
+        <button onclick="Copy('code16')">Copy</button>
+        <code id='code16'>
+            const age = calcAge(1991);
+        </code>
+        <br>
+        <button onclick="Copy('code17')">Copy</button>
+        <code id='code17'>
+            Function Declarations can be called/used before it's declaration. (unlike Functions Expressions)
+        </code>
+        <br>
+        <button onclick="Copy('code18')">Copy</button>
+        <code id='code18'>
+            Use what you preffer.
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Arrow Functions
+    </p>
+    <p>
+        <button onclick="Copy('code19')">Copy</button>
+        <code id='code19'>
+            const calcAge = birthYear => 2037 - birthYear
+        </code>
+        <br>
+        <button onclick="Copy('code20')">Copy</button>
+        <code id='code20'>
+            calcAge(1991);
+        </code>
+        <br>
+        <button onclick="Copy('code21')">Copy</button>
+        <code id='code21'>
+            const yearsUntilRetirement = (birthYear, firstName)<br> => {<br>const age = 2037 - birthYear;<br>const retirement = 65 - age;<br>return `${firstName}:${retirement}`;<br>}
+        </code>
+        <br>
+        <button onclick="Copy('code22')">Copy</button>
+        <code id='code22'>
+            fit for one liners
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Arrays
+    </p>
+    <p>
+        <button onclick="Copy('code23')">Copy</button>
+        <code id='code23'>
+            Create: const friends = ['Michael', 'Steven', 'Peter']; (cant reassign array)
+        </code>
+        <br>
+        <button onclick="Copy('code24')">Copy</button>
+        <code id='code24'>
+            Create: const years = new Array('1991', '1984', '2008', '2020');
+        </code>
+        <br>
+        <button onclick="Copy('code25')">Copy</button>
+        <code id='code25'>
+            Read: years[0]; years[2]; years.length; years[years.length - 1]
+        </code>
+        <br>
+        <button onclick="Copy('code26')">Copy</button>
+        <code id='code26'>
+            Update: friends[2] = 'Jay';
+        </code>
+        <br>
+        <button onclick="Copy('code27')">Copy</button>
+        <code id='code27'>
+            Values, Expressions, Variables, Arrays, Functions can be used as elements of Array.
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Array Methods
+    </p>
+    <p>
+        <button onclick="Copy('code28')">Copy</button>
+        <code id='code28'>
+            /*Add to end:*/ const newLength = friends.push('Jay');
+        </code>
+        <br>
+        <button onclick="Copy('code28')">Copy</button>
+        <code id='code28'>
+            /*Add to beginning:*/ const newLength = friends.unshift('John');
+        </code>
+        <br>
+        <button onclick="Copy('code29')">Copy</button>
+        <code id='code29'>
+            /*Remove last:*/ const poped = friends.pop('Jay');
+        </code>
+        <br>
+        <button onclick="Copy('code30')">Copy</button>
+        <code id='code30'>
+            /*Remove first:*/ const removed = friends.shift();
+        </code>
+        <br>
+        <button onclick="Copy('code31')">Copy</button>
+        <code id='code31'>
+            /*Index:*/ const index = friends.indexOf('Steven');
+        </code>
+        <br>
+        <button onclick="Copy('code32')">Copy</button>
+        <code id='code32'>
+            /*Exists:*/ const isIn = friends.includes('Bob); /*uses ===*/
+        </code>
+        <br>
+    </p>
+</li>
                     </ol>
                 </section>
             </article>
