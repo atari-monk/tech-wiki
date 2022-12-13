@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="atari-monk" />
+        <meta name="description" content="Tutorial page of my tech wiki." />
+        <title>Tech Wiki Web Page</title>
+        <link rel="icon" href="../images/html5.png" type="image/x-icon" />
+        <link rel="stylesheet" href="../css/main.css" type="text/css" />
+        <script src="../js/tutorial.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="title">JavaScript Course Part 12</h1>
+            <nav aria-label="primary-navigation">
+                <ul>
+                    <li class="list-point">
+                        <a href="#source">Source</a>
+                    </li class="list-point">
+                    <li class="list-point">
+                        <a href="#desc">Description</a>
+                    </li class="list-point">
+                    <li class="list-point">
+                        <a href="#prerequisites">Prerequisites/Assumptions</a>
+                    </li class="list-point">
+                    <li class="list-point">
+                        <a href="#tutorial">Tutorial</a>
+                    </li class="list-point">
+                    <li class="list-point">
+                        <a href="#summary">Summary</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <hr />
+        <main>
+            <article id="source">
+                <h2>Source</h2>
+                <section class="list-point">
+                    <ol>
+                        <li class="list-point">
+                            <a href="https://www.youtube.com/playlist?list=PLd7dW_Jxkr_Yw6apt7tpzDC6X2mP5UhtQ">Source tutorial</a>
+                        </li>
+                        <li class="list-point">
+                            <a href="https://github.com/jonasschmedtmann/complete-javascript-course">Source GitHub Repo</a>
+                        </li>
+                        <li class="list-point">
+                            <a href="https://github.com/atari-monk/javascript-course">Exercise GitHub Repo - tasks done after tutorial parts to practice teory.</a>
+                        </li>
+                        <li class="list-point">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">Operator Precedence</a>
+                        </li>
+                        <li class="list-point">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a>
+                        </li>
+                        <li class="list-point">
+                            <a href="https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer">Front-end web developer</a>
+                        </li>
+                    </ol>
+                </section>
+            </article>
+            <article id="desc">
+                <h2>Description</h2>
+                <section>
+                    <p>
+                        Part 12.
+                    </p>
+                </section>
+            </article>
+            <article id="prerequisites">
+                <h2>Prerequisites/Assumptions</h2>
+                <section>
+                    <ol>
+                        <li class="list-point"><a href="vscode.html">VSCode</a></li>
+                    </ol>
+                </section>
+            </article>
+            <article id="tutorial">
+                <h2>Tutorial</h2>
+                <section>
+                    <ol>
+                      <li>
+    <p>
+        Part 12; this keyword.
+    </p>
+    <p>
+        <button onclick="Copy('code1')">Copy</button>
+        <code id='code1'>
+            window - global JS object.
+        </code>
+        <br>
+        <button onclick="Copy('code2')">Copy</button>
+        <code id='code2'>
+            Created for every function execution context.<br>Points to 'owner' of function.
+        </code>
+        <br>
+        <button onclick="Copy('code3')">Copy</button>
+        <code id='code3'>
+            Method (atached to object) has this pointing to calling it object.
+        </code>
+        <br>
+        <button onclick="Copy('code4')">Copy</button>
+        <code id='code4'>
+            Function has this undefined in strict mode.
+        </code>
+        <br>
+        <button onclick="Copy('code5')">Copy</button>
+        <code id='code5'>
+            Arrow Function has this of parent/surrounding scope function.
+        </code>
+        <br>
+        <button onclick="Copy('code6')">Copy</button>
+        <code id='code6'>
+            Event listener has this pointing to DOM element.
+        </code>
+        <br>
+        <button onclick="Copy('code7')">Copy</button>
+        <code id='code7'>
+            console.log(this) proves that global this points to global window object.
+        </code>
+        <br>
+        <button onclick="Copy('code8')">Copy</button>
+        <code id='code8'>
+            Function is a variable so it can be assigned to variables.<br>It can be 'borowed' betwween objects or assigned from object to some global variable. Depending on from what context it's called, this will change accordingly.
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Function vs Arrow Function in object
+    </p>
+    <p>
+        <button onclick="Copy('code9')">Copy</button>
+        <code id='code9'>
+            Arrow Function as method have this pointing to global window, not object.<br>Never use it as method.
+        </code>
+        <br>
+        <button onclick="Copy('code10')">Copy</button>
+        <code id='code10'>
+            To call function in method (object's function) use Arrow Function becouse then this will point to object as expected (when method or method expression will get undefined this).
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Primitives vs Reference Types
+    </p>
+    <p>
+        <button onclick="Copy('code11')">Copy</button>
+        <code id='code11'>
+            Primitives are stored in the callstack (execution contexts).
+        </code>
+        <br>
+        <button onclick="Copy('code12')">Copy</button>
+        <code id='code12'>
+            Objects are stored in the heap.
+        </code>
+        <br>
+        <button onclick="Copy('code13')">Copy</button>
+        <code id='code13'>
+            Primitives has Identifiers pointing to address and value on callstack.<br>Identifiers can be assign to any address.
+        </code>
+        <br>
+        <button onclick="Copy('code14')">Copy</button>
+        <code id='code14'>
+            Objects have identifiers pointing to address and value on callstack, that value is address on the heap, pointing to object value.
+        </code>
+        <br>
+        <button onclick="Copy('code15')">Copy</button>
+        <code id='code15'>
+            to copy object: const objCopy = Object.assign({}, obj); (shallow copy - dosent copy internal objects)
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Part 13. Modern syntax. Destructuring Arrays. Gets variables from array.
+    </p>
+    <p>
+        <button onclick="Copy('code16')">Copy</button>
+        <code id='code16'>
+            const [x,y,z] = arr; is same as const a = arr[0];...;c = arr[2]
+        </code>
+        <br>
+        <button onclick="Copy('code17')">Copy</button>
+        <code id='code17'>
+            const [x, ,z] = arr; to skip values.
+        </code>
+        <br>
+        <button onclick="Copy('code18')">Copy</button>
+        <code id='code18'>
+            let [x, ,z] = arr; [x,z] = [z,x]; to switch values in variables.
+        </code>
+        <br>
+        <button onclick="Copy('code19')">Copy</button>
+        <code id='code19'>
+            const [x, y] = f(); to get multiple values from function returning array.
+        </code>
+        <br>
+        <button onclick="Copy('code20')">Copy</button>
+        <code id='code20'>
+            const nested = [2, 4, [5, 6]]; const [i, , [j, k]] = nested;
+        </code>
+        <br>
+        <button onclick="Copy('code21')">Copy</button>
+        <code id='code21'>
+            const [p = 1, q = 1, r = 1] = [8, 9]; this gets 8, 9, 1 (default values)
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Destructuring objects. Gets variables from object.
+    </p>
+    <p>
+        <button onclick="Copy('code22')">Copy</button>
+        <code id='code22'>
+            const { name, openningHours, categories } = obj; this takes values form object properties.
+        </code>
+        <br>
+        <button onclick="Copy('code23')">Copy</button>
+        <code id='code23'>
+            const { menu = [], starterMenu:starters = [] } = obj; change variable names, give default value in case no value.
+        </code>
+        <br>
+        <button onclick="Copy('code24')">Copy</button>
+        <code id='code24'>
+            const obj = { a: 23, b: 7, c: 12 }; ({a, b}) = obj; mutate variables when destructuring object.
+        </code>
+        <br>
+        <button onclick="Copy('code25')">Copy</button>
+        <code id='code25'>
+            const { fri: { open: o, close: c}} = openningHours; nested destructuring object with new variable names.
+        </code>
+        <br>
+        <button onclick="Copy('code26')">Copy</button>
+        <code id='code26'>
+            Destructuring object can be done as a parameter in function or method.
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Array Spread operator
+    </p>
+    <p>
+        <button onclick="Copy('code27')">Copy</button>
+        <code id='code27'>
+            Useable on Iterables(not objects): arrays, strings, maps, sets and objects.
+        </code>
+        <br>
+        <button onclick="Copy('code28')">Copy</button>
+        <code id='code28'>
+            const newArr = [ 1, 2, ...arr]; expands arr elements to newArr.
+        </code>
+        <br>
+        <button onclick="Copy('code29')">Copy</button>
+        <code id='code29'>
+            console.log(...log); logs individual elements of array expanded into method.
+        </code>
+        <br>
+        <button onclick="Copy('code30')">Copy</button>
+        <code id='code30'>
+            const newMenu = [...restaurant.mainMenu, 'Gnocci']; spread when creating new array.
+        </code>
+        <br>
+        <button onclick="Copy('code31')">Copy</button>
+        <code id='code31'>
+            const arrCopy = [...arr]; simpler syntax for array copy.
+        </code>
+        <br>
+        <button onclick="Copy('code32')">Copy</button>
+        <code id='code32'>
+            const menu = [...obj.menuA, ...obj.menuB]; joining arrays.
+        </code>
+        <br>
+        <button onclick="Copy('code33')">Copy</button>
+        <code id='code33'>
+            const str = 'Jonas'; const letters = [...str, '', 'S.'];
+        </code>
+        <br>
+        <button onclick="Copy('code34')">Copy</button>
+        <code id='code34'>
+            const objCopy = {...obj}; simpler syntax for object copy.
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Rest operator
+    </p>
+    <p>
+        <button onclick="Copy('code35')">Copy</button>
+        <code id='code35'>
+            const arr = [1,2, ...[3, 4]]; spread - on right of =
+        </code>
+        <br>
+        <button onclick="Copy('code36')">Copy</button>
+        <code id='code36'>
+            const [a, b, ...others] = [1, 2, 3, 4, 5]; destructuring with rest - on left of =
+        </code>
+        <br>
+        <button onclick="Copy('code37')">Copy</button>
+        <code id='code37'>
+            const add = function (...numbers); aggregates any number of separete parameters to array numbers, also can be called with spread array.
+        </code>
+        <br>
+        <button onclick="Copy('code38')">Copy</button>
+        <code id='code38'>
+            const add = function (x, y, ...otherNumbers); gets 'unused' params to array in function.
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Logic operators expanded
+    </p>
+    <p>
+        <button onclick="Copy('code39')">Copy</button>
+        <code id='code39'>
+            const x = obj.num || 10; 10 if undefined/0 (when falsey). Short circuts on first truethy.
+        </code>
+        <br>
+        <button onclick="Copy('code40')">Copy</button>
+        <code id='code40'>
+            obj.method && obj.method(x,y). Call method only if it exists. Short circuts on first falsey.
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Null coalescing operator
+    </p>
+    <p>
+        <button onclick="Copy('code41')">Copy</button>
+        <code id='code41'>
+            const x = obj.num ?? 10; 10 when nullish: null, undefined.
+        </code>
+        <br>
+        <button onclick="Copy('code42')">Copy</button>
+        <code id='code42'>
+            ||=, &&=, ??= are also in JS.
+        </code>
+        <br>
+    </p>
+</li>
+                    </ol>
+                </section>
+            </article>
+            <article id="summary">
+                <h2>Summary</h2>
+                <summary>
+                  The very base, done once for definition/ground language feeling.
+                </summary>
+            </article>
+        </main>
+        <hr />
+        <footer>
+            <p>
+                &lt;&lt;&lt;
+                <a href="https://github.com/atari-monk">atari-monk</a>
+                &gt;&gt;&gt;
+            </p>
+            <p>
+                <a href="#">Back to Top</a>
+            </p>
+        </footer>
+    </body>
+</html>
