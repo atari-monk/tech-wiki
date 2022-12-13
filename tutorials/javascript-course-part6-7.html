@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="atari-monk" />
+        <meta name="description" content="Tutorial page of my tech wiki." />
+        <title>Tech Wiki Web Page</title>
+        <link rel="icon" href="../images/html5.png" type="image/x-icon" />
+        <link rel="stylesheet" href="../css/main.css" type="text/css" />
+        <script src="../js/tutorial.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="title">JavaScript Course Part 6-7</h1>
+            <nav aria-label="primary-navigation">
+                <ul>
+                    <li class="list-point">
+                        <a href="#source">Source</a>
+                    </li class="list-point">
+                    <li class="list-point">
+                        <a href="#desc">Description</a>
+                    </li class="list-point">
+                    <li class="list-point">
+                        <a href="#prerequisites">Prerequisites/Assumptions</a>
+                    </li class="list-point">
+                    <li class="list-point">
+                        <a href="#tutorial">Tutorial</a>
+                    </li class="list-point">
+                    <li class="list-point">
+                        <a href="#summary">Summary</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <hr />
+        <main>
+            <article id="source">
+                <h2>Source</h2>
+                <section class="list-point">
+                    <ol>
+                        <li class="list-point">
+                            <a href="https://www.youtube.com/playlist?list=PLd7dW_Jxkr_Yw6apt7tpzDC6X2mP5UhtQ">Source tutorial</a>
+                        </li>
+                        <li class="list-point">
+                            <a href="https://github.com/jonasschmedtmann/complete-javascript-course">Source GitHub Repo</a>
+                        </li>
+                        <li class="list-point">
+                            <a href="https://github.com/atari-monk/javascript-course">Exercise GitHub Repo - tasks done after tutorial parts to practice teory.</a>
+                        </li>
+                        <li class="list-point">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">Operator Precedence</a>
+                        </li>
+                        <li class="list-point">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a>
+                        </li>
+                        <li class="list-point">
+                            <a href="https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer">Front-end web developer</a>
+                        </li>
+                    </ol>
+                </section>
+            </article>
+            <article id="desc">
+                <h2>Description</h2>
+                <section>
+                    <p>
+                        Part 6-7.
+                    </p>
+                </section>
+            </article>
+            <article id="prerequisites">
+                <h2>Prerequisites/Assumptions</h2>
+                <section>
+                    <ol>
+                        <li class="list-point"><a href="vscode.html">VSCode</a></li>
+                    </ol>
+                </section>
+            </article>
+            <article id="tutorial">
+                <h2>Tutorial</h2>
+                <section>
+                    <ol>
+                      <li>
+    <p>
+        Loops - control statements automating repetitions (Video 6, Vid 1-6 - Fundamentals)
+    </p>
+    <p>
+        <button onclick="Copy('code1')">Copy</button>
+        <code id='code1'>
+            for (let i=1; i<=10; i++){}
+        </code>
+        <br>
+        <button onclick="Copy('code2')">Copy</button>
+        <code id='code2'>
+            let i = 1;<br>while(i <= 10) {<br> i++; <br>};<br>Use when number of iteration is unknown.
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Configure VSCode (Video 7)
+    </p>
+    <p>
+        <button onclick="Copy('code3')">Copy</button>
+        <code id='code3'>
+            Install Prettier extension (formatter), Settings -> set it as 'default formatter', trun on format on save
+        </code>
+        <br>
+        <button onclick="Copy('code4')">Copy</button>
+        <code id='code4'>
+            configure Prettier by adding json named .prettierrc; add options 'singleQuote' : true, 'arrowParens': 'avoid';<br>Formatter makes code look consistent.
+        </code>
+        <br>
+        <button onclick="Copy('code5')">Copy</button>
+        <code id='code5'>
+            File->Preferances->Confugure User Snippets, New file, name it, uncommend Print to console. Edit it to use prefix 'cl' + Tab to have console.log(); snippet.
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Install Live Server extension.
+    </p>
+    <aside>
+        <details>
+            <summary>details</summary>
+            <p><mark class="mark-desc">allready Installed</mark></p>
+        </details>
+    </aside>
+    <p>
+        <button onclick="Copy('code6')">Copy</button>
+        <code id='code6'>
+            In VSCode extension manager.
+        </code>
+        <br>
+        <button onclick="Copy('code7')">Copy</button>
+        <code id='code7'>
+            Using node.js and npm:
+        </code>
+        <br>
+        <button onclick="Copy('code8')">Copy</button>
+        <code id='code8'>
+            node -v
+        </code>
+        <br>
+        <button onclick="Copy('code9')">Copy</button>
+        <code id='code9'>
+            npm install live-server -g
+        </code>
+        <br>
+        <button onclick="Copy('code10')">Copy</button>
+        <code id='code10'>
+            live-server
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Learning coding
+    </p>
+    <p>
+        <button onclick="Copy('code11')">Copy</button>
+        <code id='code11'>
+            Have a clear goal.
+        </code>
+        <br>
+        <button onclick="Copy('code12')">Copy</button>
+        <code id='code12'>
+            Understand and type code from tutorials.
+        </code>
+        <br>
+        <button onclick="Copy('code13')">Copy</button>
+        <code id='code13'>
+            Learn and reinforce with notes and exercises (calculate something personal, codewars page).
+        </code>
+        <br>
+        <button onclick="Copy('code14')">Copy</button>
+        <code id='code14'>
+            Code your own projects.
+        </code>
+        <br>
+        <button onclick="Copy('code15')">Copy</button>
+        <code id='code15'>
+            Dont obsess about clean code or that you will never know everything.
+        </code>
+        <br>
+        <button onclick="Copy('code16')">Copy</button>
+        <code id='code16'>
+            Dont learn in isolation. Some community is beneficial.
+        </code>
+        <br>
+        <button onclick="Copy('code17')">Copy</button>
+        <code id='code17'>
+            Only fixing problems and never stoping it, will make you competent. Learning never stops.
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Solving problems
+    </p>
+    <p>
+        <button onclick="Copy('code18')">Copy</button>
+        <code id='code18'>
+            1. 100% understand clear picture of the problem.
+        </code>
+        <br>
+        <button onclick="Copy('code19')">Copy</button>
+        <code id='code19'>
+            2. Divide and conquer: break big into smaller sub-problems.
+        </code>
+        <br>
+        <button onclick="Copy('code20')">Copy</button>
+        <code id='code20'>
+            3. Research as much as you have to.
+        </code>
+        <br>
+        <button onclick="Copy('code21')">Copy</button>
+        <code id='code21'>
+            4. For bigger problems, write pseudo-code before actual code.
+        </code>
+        <br>
+    </p>
+</li>
+<li>
+    <p>
+        Debugging
+    </p>
+    <p>
+        <button onclick="Copy('code1')">Copy</button>
+        <code id='code1'>
+            Identify, Find, Fix, Prevent Bug.
+        </code>
+        <br>
+        <button onclick="Copy('code2')">Copy</button>
+        <code id='code2'>
+            Chrome F12, Sources tab, .js file, add breakpoints, 
+        </code>
+        <br>
+        <button onclick="Copy('code3')">Copy</button>
+        <code id='code3'>
+            In code add (debugger:) line to get a breakpont.
+        </code>
+        <br>
+    </p>
+</li>
+                    </ol>
+                </section>
+            </article>
+            <article id="summary">
+                <h2>Summary</h2>
+                <summary>
+                  The very base, done once for definition/ground language feeling.
+                </summary>
+            </article>
+        </main>
+        <hr />
+        <footer>
+            <p>
+                &lt;&lt;&lt;
+                <a href="https://github.com/atari-monk">atari-monk</a>
+                &gt;&gt;&gt;
+            </p>
+            <p>
+                <a href="#">Back to Top</a>
+            </p>
+        </footer>
+    </body>
+</html>

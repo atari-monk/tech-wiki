@@ -11,7 +11,7 @@
     </head>
     <body>
         <header>
-            <h1 class="title">JavaScript Course Part 6&7</h1>
+            <h1 class="title">JavaScript Course Part 8-11</h1>
             <nav aria-label="primary-navigation">
                 <ul>
                     <li class="list-point">
@@ -63,7 +63,7 @@
                 <h2>Description</h2>
                 <section>
                     <p>
-                        Part 6&7.
+                        Part 8-11.
                     </p>
                 </section>
             </article>
@@ -81,168 +81,120 @@
                     <ol>
                       <li>
     <p>
-        Loops - control statements automating repetitions (Video 6, Vid 1-6 - Fundamentals)
+        Part 8 skiped as to simple for any gain.
+    </p>
+    <p>
+    </p>
+</li>
+<li>
+    <p>
+        Part 9&10 is simple apps to learn DOM manipulation. In repo.
+    </p>
+    <p>
+    </p>
+</li>
+<li>
+    <p>
+        DOM - Document Object Model<br>Structured representation of html.<br>Allows JavaScript access to html elements and styles to manipulate them.
     </p>
     <p>
         <button onclick="Copy('code1')">Copy</button>
         <code id='code1'>
-            for (let i=1; i<=10; i++){}
+            For example, change text, html attributes, css styles.
         </code>
         <br>
         <button onclick="Copy('code2')">Copy</button>
         <code id='code2'>
-            let i = 1;<br>while(i <= 10) {<br> i++; <br>};<br>Use when number of iteration is unknown.
+            Html is translated to DOM tree structure.
+        </code>
+        <br>
+        <button onclick="Copy('code3')">Copy</button>
+        <code id='code3'>
+            DOM is one of Web Api's witch browsers implement and javascript can interact with.
         </code>
         <br>
     </p>
 </li>
 <li>
     <p>
-        Configure VSCode (Video 7)
+        Part 11 is 'how it works under the hood' kind.<br>JS Engine:
     </p>
     <p>
-        <button onclick="Copy('code3')">Copy</button>
-        <code id='code3'>
-            Install Prettier extension (formatter), Settings -> set it as 'default formatter', trun on format on save
-        </code>
-        <br>
         <button onclick="Copy('code4')">Copy</button>
         <code id='code4'>
-            configure Prettier by adding json named .prettierrc; add options 'singleQuote' : true, 'arrowParens': 'avoid';<br>Formatter makes code look consistent.
+            JS Engine - executes js code. (ex. V8 Engine used in chrorme and node.js)
         </code>
         <br>
         <button onclick="Copy('code5')">Copy</button>
         <code id='code5'>
-            File->Preferances->Confugure User Snippets, New file, name it, uncommend Print to console. Edit it to use prefix 'cl' + Tab to have console.log(); snippet.
+            Engine - call stack (excecutes code in execution context), heap (objects in memory)
         </code>
         <br>
-    </p>
-</li>
-<li>
-    <p>
-        Install Live Server extension.
-    </p>
-    <aside>
-        <details>
-            <summary>details</summary>
-            <p><mark class="mark-desc">allready Installed</mark></p>
-        </details>
-    </aside>
-    <p>
         <button onclick="Copy('code6')">Copy</button>
         <code id='code6'>
-            In VSCode extension manager.
+            compilation: source code->bin file with machine code (1 and 0's)->execution
         </code>
         <br>
         <button onclick="Copy('code7')">Copy</button>
         <code id='code7'>
-            Using node.js and npm:
+            interpreter: source code->executing line by line with conversion to machine code
         </code>
         <br>
         <button onclick="Copy('code8')">Copy</button>
         <code id='code8'>
-            node -v
+            JS uses JIT compilation. Compiles to machine code and executes. (No bin file)
         </code>
         <br>
         <button onclick="Copy('code9')">Copy</button>
         <code id='code9'>
-            npm install live-server -g
+            JS JIT compilation: Parsing (reading with specific rules) produces AST (Abstract Syntax Tree).<br>AST is tree like data structure with language parts used to generate machine code (representation of a language).<br>Compilation is generating machine code from AST.<br>This gets executed, also it is optimized and recompiled during excecution to run code faster.
         </code>
         <br>
         <button onclick="Copy('code10')">Copy</button>
         <code id='code10'>
-            live-server
+            Runtime in browser: JS Engine, WEB APIs (DOM, Timers, Fetch API, ...),<br> Callback Queue (for ex. callback for DOM event like click), Event Loop).
+        </code>
+        <br>
+        <button onclick="Copy('code11')">Copy</button>
+        <code id='code11'>
+            Runtime in Node.js: no web api's from browser, instead c++ bindings & thread pool.
         </code>
         <br>
     </p>
 </li>
 <li>
     <p>
-        Learning coding
+        How code executes in JS Engine
     </p>
     <p>
-        <button onclick="Copy('code11')">Copy</button>
-        <code id='code11'>
-            Have a clear goal.
-        </code>
-        <br>
         <button onclick="Copy('code12')">Copy</button>
         <code id='code12'>
-            Understand and type code from tutorials.
+            Global execution context (for top level code).<br>Execute top level code.<br>Execution of functions (creates one execution context per function) and waiting for callbacks (events loop). Call stack is all these execution context's.
         </code>
         <br>
         <button onclick="Copy('code13')">Copy</button>
         <code id='code13'>
-            Learn and reinforce with notes and exercises (calculate something personal, codewars page).
+            Execution context: Variable environment (variable declarations, functions, arguments object), scope chain, this keyword.<br>Arrow functions dont have their own arguments object and this keyword, they inherit those from parent standard functions.
         </code>
         <br>
         <button onclick="Copy('code14')">Copy</button>
         <code id='code14'>
-            Code your own projects.
+            For example for code that has global part and 2 functions,<br>one global context and 2 function contexts.<br>There are values that are known only after executing those in right order.
         </code>
         <br>
         <button onclick="Copy('code15')">Copy</button>
         <code id='code15'>
-            Dont obsess about clean code or that you will never know everything.
+            Example: global code with call to first function, witch calls secode function for some value.<br>Call stack is produced.<br>Global goes first, on top first(), on top second().<br>JS has only one THREAD!<br>second() is run and poped of the stack, then first(), then global(). Broweser closed closes global.
         </code>
         <br>
         <button onclick="Copy('code16')">Copy</button>
         <code id='code16'>
-            Dont learn in isolation. Some community is beneficial.
+            Scoping. Where variable is declared and used. Global, local (function), block (function, if, loop, ...).<br>All scope have parent and can search it if they need variable they dont have. Variable lookup in scope chain (only in parent, up direction).<br>Var(obsolete) is function scoped.<br>Let and const is block scoped.
         </code>
         <br>
         <button onclick="Copy('code17')">Copy</button>
         <code id='code17'>
-            Only fixing problems and never stoping it, will make you competent. Learning never stops.
-        </code>
-        <br>
-    </p>
-</li>
-<li>
-    <p>
-        Solving problems
-    </p>
-    <p>
-        <button onclick="Copy('code18')">Copy</button>
-        <code id='code18'>
-            1. 100% understand clear picture of the problem.
-        </code>
-        <br>
-        <button onclick="Copy('code19')">Copy</button>
-        <code id='code19'>
-            2. Divide and conquer: break big into smaller sub-problems.
-        </code>
-        <br>
-        <button onclick="Copy('code20')">Copy</button>
-        <code id='code20'>
-            3. Research as much as you have to.
-        </code>
-        <br>
-        <button onclick="Copy('code21')">Copy</button>
-        <code id='code21'>
-            4. For bigger problems, write pseudo-code before actual code.
-        </code>
-        <br>
-    </p>
-</li>
-<li>
-    <p>
-        Debugging
-    </p>
-    <p>
-        <button onclick="Copy('code1')">Copy</button>
-        <code id='code1'>
-            Identify, Find, Fix, Prevent Bug.
-        </code>
-        <br>
-        <button onclick="Copy('code2')">Copy</button>
-        <code id='code2'>
-            Chrome F12, Sources tab, .js file, add breakpoints, 
-        </code>
-        <br>
-        <button onclick="Copy('code3')">Copy</button>
-        <code id='code3'>
-            In code add (debugger:) line to get a breakpont.
+            Hoisting. Variable useable before they are declared.<br>'They are lifted to top of their scope'.<br>Function declarations are hoisted.<br>let and const are not hoisted (usable after declaration in code). All this is true in Strict mode witch should be allways used.
         </code>
         <br>
     </p>
